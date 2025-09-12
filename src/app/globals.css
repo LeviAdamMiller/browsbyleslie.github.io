@@ -107,3 +107,28 @@ footer {
   box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.34)
 
 }
+#leslie{
+   border-radius: 15px;
+   margin: 20px;
+   
+   box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.34);
+   width: 325px !important;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem; /* Adjust the gap between the two sections as needed */
+  max-width: 1200px; /* Optional: limit the maximum width */
+  margin: 0 auto; /* Center the container */
+  padding: 0 1rem; /* Optional: add some horizontal padding */
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
