@@ -9,6 +9,8 @@ html, body {
    overscroll-behavior: none;
    color: #0a0a0a !important;
    scroll-behavior: smooth;
+   overflow-x: hidden !important;
+
 }
 
 * {
@@ -103,16 +105,15 @@ footer {
 #ombre {
   border-radius: 15px;
   
-  margin: 20px;
+  margin: 30px;
   box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.34)
 
 }
 #leslie{
    border-radius: 15px;
-   margin: 20px;
-   
+   margin: 30px;
    box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.34);
-   width: 325px !important;
+   
 }
 
 .flex-container {
@@ -130,5 +131,11 @@ footer {
 @media (max-width: 800px) {
   .flex-container {
     flex-direction: column;
+  }
+  #leslie, #ombre {
+    margin: 16px auto; /* Center and reduce margin */
+    max-width: 100%; /* Prevent overflow */
+    height: auto;
+    
   }
 }

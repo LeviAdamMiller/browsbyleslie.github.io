@@ -12,6 +12,7 @@ const fadeUp = {
 
 
 export default function Hero() {
+  
   return (
     <main className="bg-white text-gray-900 scroll-smooth snap-y snap-mandatory overflow-y-scroll h-screen">
       <section className="relative w-full min-h-screen flex items-center justify-center px-4 sm:px-6 bg-gradient-to-br from-pink-200 via-pink-100 to-rose-50">
@@ -65,9 +66,10 @@ export default function Hero() {
             </button>
           </div>
         </motion.div>
+    
       </section>
      {/* About Me Section - Photo Left, Description Right */}
-<section className="py-16 bg-white">
+<section className="py-16 bg-white min-height: 100vh overflow:auto overflow-x-hidden">
   {/* Title */}
   <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-serif mb-12">
     <ScrollHighlight
@@ -79,8 +81,7 @@ export default function Hero() {
   </h2>
 
   {/* Content Container */}
-  <div className="flex-container">
-    
+  <div className="flex-container max-w-6xl mx-auto px-4 sm:px-6">
       
       {/* Left side - Photo */}
       <motion.div
@@ -96,7 +97,6 @@ export default function Hero() {
           alt="Leslie doing brows"
           width={325}
           height={400}
-         
         />
       </motion.div>
       
@@ -109,7 +109,7 @@ export default function Hero() {
         className="md:w-1/2 space-y-6"
       >
         {/* Greeting */}
-        <div className="text-2xl font-serif text-gray-800">
+        <div className="text-3xl font-serif text-gray-800">
           <ScrollHighlight
             text="Hi, I'm Leslie!"
             variant="color-sweep"
@@ -153,7 +153,7 @@ export default function Hero() {
           </p>
         </div>
       </motion.div>
-    </div>
+  </div>
 </section>
 
 
@@ -180,32 +180,57 @@ export default function Hero() {
               id="ombre"
               src="/Powdered_brows.png"
               alt="Ombre Brows"
-              width={325} // intrinsic width
-              height={400} // intrinsic height
+              width={325}
+              height={400}
               className="h-48 object-cover sm:h-56 lg:w-80 lg:h-72 lg:mx-auto"
               />
                <Image
               id="ombre"
               src="/PwBr2.png"
               alt="Ombre Brows"
-              width={325} // intrinsic width
-              height={400} // intrinsic height
+              width={325}
+              height={400}
               className="h-48 object-cover sm:h-56 lg:w-80 lg:h-72 lg:mx-auto"
               />
               <Image
               id="ombre"
               src="/PwBr3.png"
               alt="Ombre Brows"
-              width={325} // intrinsic width
-              height={400} // intrinsic height
+              width={325}
+              height={400}
               className="h-48 object-cover sm:h-56 lg:w-80 lg:h-72 lg:mx-auto"
               />
+               <motion.section
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="py-12 sm:py-20 px-4 sm:px-6 bg-white"
+      >
             <h3 className="text-xl sm:text-2xl font-serif mb-2">Ombre Brows</h3>
+            </motion.section>
+            <motion.section
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="py-12 sm:py-20 px-4 sm:px-6 bg-white"
+          >
             <p className="text-gray-600 text-sm sm:text-base">
             Soft, natural-looking brows with a gentle shaded effect. Fully customizable and long lasting, up to 3 years. Can be combined with microblading for a hybrid look. 💕✨
             </p>
+            </motion.section>
           </motion.div>
+          <motion.section />
           {/* Microblading */}
+          <motion.section variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="py-12 sm:py-20 px-4 sm:px-6 bg-white">
           <motion.div
             variants={fadeUp}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -235,18 +260,41 @@ export default function Hero() {
               height={400}
               className="h-48 object-cover sm:h-56 lg:w-80 lg:h-72 mx-auto"
             />
-              
+               <motion.section
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="py-12 sm:py-20 px-4 sm:px-6 bg-white"
+          >
             <h3 className="text-xl sm:text-2xl font-serif mt-4 mb-2">
               Microblading
             </h3>
-            
+            </motion.section>
+             <motion.section
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="py-12 sm:py-20 px-4 sm:px-6 bg-white"
+            >
             <p className="text-gray-600 text-sm sm:text-base">
               Fine, hair-like strokes that mimic natural brows. Perfect for
               clients who want definition while keeping a soft, realistic finish.
             </p>
+            </motion.section>
           </motion.div>
+          </motion.section>
 
           {/* Lash Extensions */}
+          <motion.section variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="py-12 sm:py-20 px-4 sm:px-6 bg-white">
           <motion.div
             variants={fadeUp}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -256,33 +304,51 @@ export default function Hero() {
               src="/L1.png"
               id="ombre"
               alt="Lash Extensions"
-              width={325}       // intrinsic width
-              height={400}      // intrinsic height
+              width={325}
+              height={400}
               className="h-48 object-cover sm:h-56 lg:w-80 lg:h-72 mx-auto"
             />
             <Image
               src="/L2.png"
               id="ombre"
               alt="Lash Extensions"
-              width={325}       // intrinsic width
-              height={400}      // intrinsic height
+              width={325}
+              height={400}
               className="h-48 object-cover sm:h-56 lg:w-80 lg:h-72 mx-auto"
             />
             <Image
               src="/L3.png"
               id="ombre"
               alt="Lash Extensions"
-              width={325}       // intrinsic width
-              height={400}      // intrinsic height
+              width={325}
+              height={400}
               className="h-48 object-cover sm:h-56 lg:w-80 lg:h-72 mx-auto"
             />
-            
+            <motion.section
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="py-12 sm:py-20 px-4 sm:px-6 bg-white"
+          >
             <h3 className="text-xl sm:text-2xl font-serif mb-2">Lash Extensions</h3>
+            </motion.section>
+            <motion.section
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="py-12 sm:py-20 px-4 sm:px-6 bg-white"
+          >
             <p className="text-gray-600 text-sm sm:text-base">
               Classic, hybrid, or volume sets designed to enhance your eye shape
               and style. Get a customized lash look from natural elegance to full glam.
-            </p>
-          </motion.div>
+             </p>
+            </motion.section>
+           </motion.div>
+          </motion.section>
         </div>
       </motion.section>
 
