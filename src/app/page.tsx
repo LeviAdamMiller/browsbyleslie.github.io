@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import ScrollHighlight from "./components/ScrollHighlight";
 
+
+
 <meta name="color-scheme" content="light"></meta>
 const fadeUp = {
   hidden: { opacity: 0, y: 50 },
@@ -32,7 +34,8 @@ export default function Hero() {
               text="Lashes & Brows by Leslie" 
               variant="color-sweep"       // ✅ This is the correct variant name
               fromColor="#817f81ff"        // Starts as light gray
-              toColor="#1f2937"          // Sweeps to dark gray/black
+              toColor="#1f2937"   
+              className="leslie-font"       // Sweeps to dark gray/black
             />
           </h1>
             <a 
@@ -46,11 +49,12 @@ export default function Hero() {
           </div>
             <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl">
             <ScrollHighlight 
-              text="Premium lash extensions and microblading to enhance your natural beauty"
+              text="Premium lash extensions and microblading"
               variant="color-sweep"       // ✅ Correct variant
               fromColor="#6b7280"        // Starts as medium gray
               toColor="#1f2937"          // Sweeps to dark
               delay={400}
+              className="leslie-font"
             />
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -68,20 +72,12 @@ export default function Hero() {
         </motion.div>
     
       </section>
-     {/* About Me Section - Photo Left, Description Right */}
-<section className="py-16 bg-white min-height: 100vh overflow:auto overflow-x-hidden">
-  {/* Title */}
-  <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-serif mb-12">
-    <ScrollHighlight
-      text="About Me"
-      variant="color-sweep"
-      fromColor="#817f81ff"
-      toColor="#1f2937"
-    />
-  </h2>
+  
+  <section className="info-section">
+  {/* About Me Section - Photo Left, Description Right */}
 
   {/* Content Container */}
-  <div className="flex-container max-w-6xl mx-auto px-4 sm:px-6">
+  <div className="flex-container flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto px-4 sm:px-6" id="about-me">
       
       {/* Left side - Photo */}
       <motion.div
@@ -95,8 +91,8 @@ export default function Hero() {
           id="leslie"
           src="/MB2.png"
           alt="Leslie doing brows"
-          width={325}
-          height={400}
+          width={350}
+          height={425}
         />
       </motion.div>
       
@@ -106,251 +102,86 @@ export default function Hero() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="md:w-1/2 space-y-6"
+        className="md:w-1/2 space-y-6 "
       >
-        {/* Greeting */}
-        <div className="text-3xl font-serif text-gray-800">
-          <ScrollHighlight
-            text="Hi, I'm Leslie!"
-            variant="color-sweep"
-            fromColor="#817f81ff"
-            toColor="#1f2937"
-            delay={200}
-          />
-        </div>
-
+       
         {/* Description */}
-        <div className="text-lg leading-relaxed text-gray-700 space-y-4">
-          <ScrollHighlight
-            text="With years of experience in the beauty industry, I specialize in creating stunning lash extensions and precision microblading that enhances your natural features."
-            variant="color-sweep"
-            fromColor="#6b7280"
-            toColor="#1f2937"
-            delay={400}
-          />
-          <ScrollHighlight
-            text="My passion is helping clients feel confident and beautiful every day. I believe in using only the highest quality products and techniques to ensure long-lasting, gorgeous results."
-            variant="color-sweep"
-            fromColor="#6b7280"
-            toColor="#1f2937"
-            delay={600}
-          />
-          <ScrollHighlight
-            text="Whether you're looking for natural enhancement or dramatic transformation, I'm here to bring your vision to life with personalized care and attention to detail."
-            variant="color-sweep"
-            fromColor="#6b7280"
-            toColor="#1f2937"
-            delay={800}
-          />
-        </div>
+        <div>
+          <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="md:w-1/2 space-y-6"
+        >
+                    
 
-        {/* Highlights */}
-        <div className="border-l-4 border-pink-300 pl-6 bg-pink-50 py-4 rounded-r-lg">
-          <p className="text-gray-800 font-medium">
-            ✨ Years of professional experience<br/>
-            💕 Premium quality products only<br/>
-            🎯 Personalized approach for every client
-          </p>
+            <p className="description-text-heading">
+          Hi, I&apos;m Leslie!              
+          With over 10 years of experience in the beauty industry, I specialize in creating 
+          <span id="stunning"> stunning lash extensions </span> 
+          and precision
+          <span id="stunning"> microblading </span> 
+          that enhances your 
+          <span className="italic text-gray-900"> natural features</span>.
+        </p>     
+                            
+         </motion.div>
+          <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="md:w-1/2 space-y-6"
+        >
+          </motion.div>
         </div>
       </motion.div>
   </div>
 </section>
 
 
-      {/* Featured Services */}
-      {/* Services Section */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
+      <section className="info-section">
+ 
+  {/* Content Container */}
+  <div className="flex-container flex-col md:flex-row-reverse items-center gap-8 max-w-6xl mx-auto px-4 sm:px-6" id="powdered-brows">
+  {/* Right side - Description */}
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.7, delay: 0.1 }}
-        className="py-12 sm:py-20 px-4 sm:px-6 bg-white"
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="md:w-1/2 space-y-6"
       >
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-center mb-8 sm:mb-12">
-          Our Services
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
-          {/* Ombre Brows */}
-          <motion.div
-            variants={fadeUp}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-gray-50 rounded-2xl shadow-lg p-6 sm:p-8 text-center">
-            <Image
-              id="ombre"
-              src="/Powdered_brows.png"
-              alt="Ombre Brows"
-              width={325}
-              height={400}
-              className="h-48 object-cover sm:h-56 lg:w-80 lg:h-72 lg:mx-auto"
-              />
-               <Image
-              id="ombre"
-              src="/PwBr2.png"
-              alt="Ombre Brows"
-              width={325}
-              height={400}
-              className="h-48 object-cover sm:h-56 lg:w-80 lg:h-72 lg:mx-auto"
-              />
-              <Image
-              id="ombre"
-              src="/PwBr3.png"
-              alt="Ombre Brows"
-              width={325}
-              height={400}
-              className="h-48 object-cover sm:h-56 lg:w-80 lg:h-72 lg:mx-auto"
-              />
-               <motion.section
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="py-12 sm:py-20 px-4 sm:px-6 bg-white"
-      >
-            <h3 className="text-xl sm:text-2xl font-serif mb-2">Ombre Brows</h3>
-            </motion.section>
-            <motion.section
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="py-12 sm:py-20 px-4 sm:px-6 bg-white"
-          >
-            <p className="text-gray-600 text-sm sm:text-base">
-            Soft, natural-looking brows with a gentle shaded effect. Fully customizable and long lasting, up to 3 years. Can be combined with microblading for a hybrid look. 💕✨
-            </p>
-            </motion.section>
-          </motion.div>
-          <motion.section />
-          {/* Microblading */}
-          <motion.section variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="py-12 sm:py-20 px-4 sm:px-6 bg-white">
-          <motion.div
-            variants={fadeUp}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-gray-50 rounded-2xl shadow-lg p-6 sm:p-8 text-center"
-          >
-            <Image
-              src="/MB1.png"
-              id="ombre"
-              alt="Microblading"
-              width={325}
-              height={400}
-              className="h-48 object-cover sm:h-56 lg:w-80 lg:h-72 mx-auto"
-            />
-            <Image
-              src="/MB2.png"
-              id="ombre"
-              alt="Microblading"
-              width={325}
-              height={400}
-              className="h-48 object-cover sm:h-56 lg:w-80 lg:h-72 mx-auto"
-            />
-            <Image
-              src="/MB3.png"
-              id="ombre"
-              alt="Microblading"
-              width={325}
-              height={400}
-              className="h-48 object-cover sm:h-56 lg:w-80 lg:h-72 mx-auto"
-            />
-               <motion.section
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="py-12 sm:py-20 px-4 sm:px-6 bg-white"
-          >
-            <h3 className="text-xl sm:text-2xl font-serif mt-4 mb-2">
-              Microblading
-            </h3>
-            </motion.section>
-             <motion.section
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="py-12 sm:py-20 px-4 sm:px-6 bg-white"
-            >
-            <p className="text-gray-600 text-sm sm:text-base">
-              Fine, hair-like strokes that mimic natural brows. Perfect for
-              clients who want definition while keeping a soft, realistic finish.
-            </p>
-            </motion.section>
-          </motion.div>
-          </motion.section>
 
-          {/* Lash Extensions */}
-          <motion.section variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="py-12 sm:py-20 px-4 sm:px-6 bg-white">
-          <motion.div
-            variants={fadeUp}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-gray-50 rounded-2xl shadow-lg p-6 sm:p-8 text-center"
-          >
-            <Image
-              src="/L1.png"
-              id="ombre"
-              alt="Lash Extensions"
-              width={325}
-              height={400}
-              className="h-48 object-cover sm:h-56 lg:w-80 lg:h-72 mx-auto"
-            />
-            <Image
-              src="/L2.png"
-              id="ombre"
-              alt="Lash Extensions"
-              width={325}
-              height={400}
-              className="h-48 object-cover sm:h-56 lg:w-80 lg:h-72 mx-auto"
-            />
-            <Image
-              src="/L3.png"
-              id="ombre"
-              alt="Lash Extensions"
-              width={325}
-              height={400}
-              className="h-48 object-cover sm:h-56 lg:w-80 lg:h-72 mx-auto"
-            />
-            <motion.section
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="py-12 sm:py-20 px-4 sm:px-6 bg-white"
-          >
-            <h3 className="text-xl sm:text-2xl font-serif mb-2">Lash Extensions</h3>
-            </motion.section>
-            <motion.section
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="py-12 sm:py-20 px-4 sm:px-6 bg-white"
-          >
-            <p className="text-gray-600 text-sm sm:text-base">
-              Classic, hybrid, or volume sets designed to enhance your eye shape
-              and style. Get a customized lash look from natural elegance to full glam.
-             </p>
-            </motion.section>
-           </motion.div>
-          </motion.section>
-        </div>
-      </motion.section>
+        <p className="description-text-heading">
+        I specialize in <span id="stunning" className="font-semibold text-pink-700">microblading</span> to give you 
+        <span className="font-semibold text-pink-700"> beautiful, natural-looking brows</span> that frame your face perfectly. 
+        Using a <span id="stunning" className="font-semibold text-pink-700">semi-permanent technique</span>, I create 
+        <span className="italic text-gray-900"> soft, hair-like strokes</span> designed to blend seamlessly with your natural brows, 
+        leaving you with <span className="font-semibold text-pink-700" id="stunning">fuller, more defined results</span>
+        </p>
+    
+      </motion.div>
+{/* Left side - Photo */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        
+      >
+        <Image
+          id="leslie"
+          src="/L1.JPEG"
+          alt="Leslie doing brows"
+          width={350}
+          height={425}
+        />
+      </motion.div>
+  </div>
+</section>
+        
 
       {/* Call to Action */}
       <motion.section

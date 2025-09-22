@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Libre+Caslon+Display&family=Outfit:wght@100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
 
 /* Optional custom styles */
 html, body {
@@ -20,7 +24,7 @@ html, body {
 
 
 :root {
-background: linear-gradient(180deg, #f5f0ff 0%, #e8d5ff 25%, #d6bcfa 50%, #e8d5ff 75%, #f5f0ff 100%);
+background: linear-gradient(180deg, #eb97e2 0%, #e9d9fb 25%, #e6d7fb 50%, #e9d9fe 75%, #f5f0ff 100%);
 background-size: 100% 250%;
 
 }
@@ -30,6 +34,53 @@ background-size: 100% 250%;
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+
+.description-text-heading {
+  font-family: "Libre Caslon Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: xxx-large;
+}
+  
+#stunning{
+  font-weight: bolder;
+  color: #5B1A72
+}
+
+.dm-serif-text-regular {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif-text-regular-italic {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.libre-caslon-display-regular {
+  font-family: "Libre Caslon Display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.leslie-font {
+ font-size: xx-large;
+}
+
+.description-text {
+  font-size: x-large;
+  margin-top: 15px;
+  font-family: "Libre Caslon Display", serif;
+
+}
+
+.beautiful {
+
+  color: #a855f7;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -42,8 +93,15 @@ background-size: 100% 250%;
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  
 }
+
+#about-me {
+  scroll-margin-top: 100px;
+  
+}
+
+
 /* From Uiverse.io by barisdogansutcu */ 
 .gradient-button {
   padding: 17px 40px;
@@ -127,15 +185,33 @@ footer {
   padding: 0 1rem; /* Optional: add some horizontal padding */
 }
 
+
+.info-section {
+  padding: 90px 0;
+}
+
 /* Responsive layout - makes a one column layout instead of a two-column layout */
 @media (max-width: 800px) {
   .flex-container {
     flex-direction: column;
+    overflow-x: hidden !important;
   }
+
+  @media(max-width: 800px){
+    #powdered-brows {
+      flex-direction: column-reverse !important;
+    }
+  }
+
+
   #leslie, #ombre {
     margin: 16px auto; /* Center and reduce margin */
     max-width: 100%; /* Prevent overflow */
     height: auto;
-    
+  }
+
+  .description-text-heading {
+    font-size: xx-large;
+    font-weight: 400;
   }
 }

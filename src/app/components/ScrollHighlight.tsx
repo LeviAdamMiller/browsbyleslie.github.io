@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 
 interface ScrollHighlightProps {
-  text: string;
+  text?: string;
+  children?: React.ReactNode;
   className?: string;
   variant?: 'color-sweep' | 'underline' | 'background';
   delay?: number;
@@ -12,7 +13,8 @@ interface ScrollHighlightProps {
 }
 
 export default function ScrollHighlight({ 
-  text, 
+  text,
+  children,
   className = "", 
   variant = 'color-sweep',
   delay = 0,
@@ -30,18 +32,14 @@ export default function ScrollHighlight({
           observer.unobserve(entry.target);
         }
       },
-      {
-        threshold: 0.3,
-        rootMargin: "0px 0px -10% 0px"
-      }
+      { threshold: 0.3, rootMargin: "0px 0px -10% 0px" }
     );
 
     if (containerRef.current) observer.observe(containerRef.current);
-
-    return () => {
-      if (containerRef.current) observer.unobserve(containerRef.current);
-    };
+    return () => { if (containerRef.current) observer.unobserve(containerRef.current); };
   }, [delay, isVisible]);
+
+  const content = children || text;
 
   if (variant === 'color-sweep') {
     return (
@@ -51,15 +49,8 @@ export default function ScrollHighlight({
         style={{ lineHeight: '1.2' }}
       >
         {/* Base text */}
-        <span 
-          style={{
-            color: fromColor,
-            display: 'inline-block',
-            position: 'relative',
-            zIndex: 1
-          }}
-        >
-          {text}
+        <span style={{ color: fromColor, display: 'inline-block', position: 'relative', zIndex: 1 }}>
+          {content}
         </span>
 
         {/* Sweeping overlay */}
@@ -71,35 +62,17 @@ export default function ScrollHighlight({
             color: toColor,
             display: 'inline-block',
             clipPath: isVisible ? 'inset(0 0 0 0)' : 'inset(0 100% 0 0)',
-           transition: 'clip-path 2.5s cubic-bezier(0.16, 1, 0.3, 1)',
+            transition: 'clip-path 2.5s cubic-bezier(0.16, 1, 0.3, 1)',
             zIndex: 2,
             lineHeight: '1.2',
             pointerEvents: 'none'
           }}
         >
-          {text}
+          {content}
         </span>
       </span>
     );
   }
 
-  // Fallback for other variants
-  return (
-    <span 
-      className={`relative inline-block ${className}`}
-      ref={containerRef}
-      style={{ lineHeight: '1.2' }}
-    >
-      <span 
-        style={{
-          position: 'relative',
-          zIndex: 1,
-          transition: 'color 0.6s ease-out',
-          color: isVisible ? toColor : fromColor
-        }}
-      >
-        {text}
-      </span>
-    </span>
-  );
+  return <span className={`relative inline-block ${className}`} ref={containerRef}>{content}</span>;
 }
