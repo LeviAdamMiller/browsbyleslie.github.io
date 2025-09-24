@@ -198,16 +198,21 @@ footer {
 
 footer {
   text-align: center;
-  padding: 20px 0;
+  padding: 40px 0;
   font-size: small;
   background-color: #c9a0f4; /* pastel lavender, slightly darker than your lightest gradient */
   color: #1f1f1f; /* dark text for readability */
   box-sizing: border-box;
 }
 
+#bottom-book-now {
+  margin: 40px;
+}
+
 footer a {
   color: inherit; /* This makes links inherit the footer's color */
 }
+
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
 @media (max-width: 800px) {
@@ -238,7 +243,8 @@ footer a {
     padding: 45px 0;
   }
   
- body{
-     margin: 2px;
- }
+  #top-section {
+    margin: 2px;
+  }
+ 
 }
