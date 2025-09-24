@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Libre+Caslon+Display&family=Outfit:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+html, body {
+   height: 100%;
+   font-family: "Outfit", sans-serif;
+   overscroll-behavior: none;
+   color: #0a0a0a !important;
+   scroll-behavior: smooth;
+   overflow-x: hidden !important;
+   margin: 0;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+:root {
+background: linear-gradient(180deg, #eb97e2 0%, #e9d9fb 25%, #e6d7fb 50%, #e9d9fe 75%, #f5f0ff 100%);
+background-size: 100% 250%;
+
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+
+.description-text-heading {
+  font-family: "Libre Caslon Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: xxx-large;
+}
+  
+#stunning{
+  font-weight: bolder;
+  color: #5B1A72
+}
+
+.dm-serif-text-regular {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif-text-regular-italic {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.libre-caslon-display-regular {
+  font-family: "Libre Caslon Display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.leslie-font {
+ font-size: xx-large;
+}
+
+.description-text {
+  font-size: x-large;
+  margin-top: 15px;
+  font-family: "Libre Caslon Display", serif;
+
+}
+
+.beautiful {
+
+  color: #a855f7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  
+}
+
+#about-me {
+  scroll-margin-top: 100px;
+  
+}
+
+#premium {
+ 
+    font-family: "DM Serif Text", serif;
+}
+
+.gradient-button {
+  padding: 17px 40px;
+  border-radius: 40px;
+  cursor: pointer;
+  border: 0;
+  background-color: rgb(251, 200, 251);
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: black !important;
+  transition: all 0.5s ease;
+  margin: 8px;
+  margin-bottom: 20px;
+  
+}
+
+.gradient-button:hover {
+  letter-spacing: 3px;
+  background-color: hsl(261deg 80% 48%);
+  color: hsl(246, 187, 239);
+  box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+
+.gradient-button:active {
+  letter-spacing: 3px;
+  background-color: hsl(261deg 80% 48%);
+  color: hsl(246, 187, 239);
+  box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+}
+footer {
+  position: sticky;
+}
+ .icons-social-media {
+  align-items: center;
+      margin-left: 5px;
+  padding: 5px;
+  width: 32px;
+  cursor: pointer !important;
+  transition: 300ms all ease-in-out;
+  position: relative;
+}
+
+.icons-social-media:hover {
+  translate: -0px -10px;
+}
+
+#instagram,
+    #youtube,#twitch {
+  transition: 300ms all ease-in-out;
+  clip-path: circle(65%);
+}
+
+#instagram:hover {
+  background-color: rgb(221, 157, 189);
+}
+
+#ombre {
+  border-radius: 15px;
+  
+  margin: 30px;
+  box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.34)
+
+}
+#leslie{
+   border-radius: 15px;
+   margin: 30px;
+   height: auto;
+   box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.34);
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem; /* Adjust the gap between the two sections as needed */
+  max-width: 1200px; /* Optional: limit the maximum width */
+  margin: 0 auto; /* Center the container */
+  padding: 0 1rem; /* Optional: add some horizontal padding */
+}
+
+
+.info-section {
+  padding: 90px 0;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: small;
+  background-color: #c9a0f4; /* pastel lavender, slightly darker than your lightest gradient */
+  color: #1f1f1f; /* dark text for readability */
+  box-sizing: border-box;
+}
+
+footer a {
+  color: inherit; /* This makes links inherit the footer's color */
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+    overflow-x: hidden !important;
+  }
+
+  @media(max-width: 800px){
+    #powdered-brows {
+      flex-direction: column-reverse !important;
+    }
+  }
+
+
+  #leslie, #ombre {
+    margin: 16px auto; /* Center and reduce margin */
+    max-width: 100%; /* Prevent overflow */
+    height: auto;
+  }
+
+  .description-text-heading {
+    font-size: xx-large;
+    font-weight: 400;
+  }
+
+  .info-section {
+    padding: 45px 0;
+  }
+  
+ body{
+     margin: 2px;
+ }
+}
