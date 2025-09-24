@@ -76,6 +76,8 @@ export default function Hero() {
           >
           Learn More
         </button>
+        
+          <p><i className="arrow down"></i></p>
           </div>
         </motion.div>
       </section>
@@ -107,7 +109,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="md:w-1/2 space-y-6"
               >
-                <p className="description-text-heading">
+                <p className="description-text-heading" >
                   Hi, I&apos;m Leslie! Along with my sisters, I co-own
                   <span className="font-semibold text-pink-700" id="stunning"> Flash Your Style</span>. With over 10
                   years of experience in the beauty industry, I specialize in creating

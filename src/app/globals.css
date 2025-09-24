@@ -173,7 +173,7 @@ footer {
   box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.34)
 
 }
-#leslie{
+#leslie {
    border-radius: 15px;
    margin: 30px;
    height: auto;
@@ -213,6 +213,17 @@ footer a {
   color: inherit; /* This makes links inherit the footer's color */
 }
 
+.arrow {
+  border: solid rgba(197, 7, 218, 0.337);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
 @media (max-width: 800px) {
