@@ -67,11 +67,15 @@ export default function Hero() {
             <a href="https://www.vagaro.com/flashyourstyle">
               <button className="gradient-button">Book Now</button>
             </a>
-           <a href="#about-me">
-            <button className="gradient-button inline-block px-8 py-3 bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 text-white font-semibold rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-300 no-underline">
-              Learn More
-            </button>
-            </a>
+          <button
+          onClick={() => {
+            const section = document.getElementById("about-me");
+            section?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className="gradient-button inline-block px-8 py-3 bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 text-white font-semibold rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-300 no-underline"
+          >
+          Learn More
+        </button>
           </div>
         </motion.div>
       </section>
