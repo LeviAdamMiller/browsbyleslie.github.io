@@ -212,8 +212,8 @@ export default function Hero() {
               <span className="font-semibold text-pink-700"> customize your lashes</span> to your
               <span className="font-semibold text-pink-700"> eye shape</span>, creating
               <span className="italic text-gray-900" id="stunning"> stunning, low-maintenance glam</span> every day.
-              Choose from <span className="font-semibold text-pink-700">Classic, Hybrid, Volume, or Mega Volume lashes</span> and let your
-              <span className="font-semibold text-pink-700"> eyes do the talking</span>!
+              Choose from <span className="font-semibold text-pink-700">Classic, Hybrid, Volume, or Mega Volume lashes,</span> designed to 
+              <span className="font-semibold text-pink-700"> complement your unique style</span>.
             </p>
           </motion.div>
 
