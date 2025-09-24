@@ -6,7 +6,7 @@
 
 
 
-/* Optional custom styles */
+
 html, body {
    height: 100%;
    font-family: "Outfit", sans-serif;
@@ -14,6 +14,7 @@ html, body {
    color: #0a0a0a !important;
    scroll-behavior: smooth;
    overflow-x: hidden !important;
+   margin: 0;
 
 }
 
@@ -101,8 +102,11 @@ body {
   
 }
 
+#premium {
+ 
+    font-family: "DM Serif Text", serif;
+}
 
-/* From Uiverse.io by barisdogansutcu */ 
 .gradient-button {
   padding: 17px 40px;
   border-radius: 40px;
@@ -116,6 +120,8 @@ body {
   color: black !important;
   transition: all 0.5s ease;
   margin: 8px;
+  margin-bottom: 20px;
+  
 }
 
 .gradient-button:hover {
@@ -170,8 +176,8 @@ footer {
 #leslie{
    border-radius: 15px;
    margin: 30px;
+   height: auto;
    box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.34);
-   
 }
 
 .flex-container {
@@ -188,6 +194,19 @@ footer {
 
 .info-section {
   padding: 90px 0;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: small;
+  background-color: #c9a0f4; /* pastel lavender, slightly darker than your lightest gradient */
+  color: #1f1f1f; /* dark text for readability */
+  box-sizing: border-box;
+}
+
+footer a {
+  color: inherit; /* This makes links inherit the footer's color */
 }
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
@@ -214,4 +233,12 @@ footer {
     font-size: xx-large;
     font-weight: 400;
   }
+
+  .info-section {
+    padding: 45px 0;
+  }
+  
+ body{
+     margin: 2px;
+ }
 }
